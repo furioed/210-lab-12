@@ -43,5 +43,13 @@ int main() {
     auto [minIt, maxIt] = minmax_element(numbers.begin(), numbers.end()); // min & max
     cout << "Min value: " << *minIt << ", Max value: " << *maxIt << endl;
 
+    // Demonstrates sorting the array
+    sort(numbers.begin(), numbers.end()); // ascending order
+    cout << "\nValues after sorting: ";
+    for (auto n : numbers) {
+        cout << n << " ";
+    }
+    cout << endl;
+
     return 0;
 }
