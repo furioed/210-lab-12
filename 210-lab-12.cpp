@@ -40,7 +40,8 @@ int main() {
     cout << "\nAverage value: " << avg << endl;
 
     // Demonstrates finding min and max values
-    auto [minIt, maxIt] = minmax_element(numbers.begin(), numbers.end()); // min & max
+    auto minIt = min_element(numbers.begin(), numbers.end()); // min value iterator
+    auto maxIt = max_element(numbers.begin(), numbers.end()); // max value iterator
     cout << "Min value: " << *minIt << ", Max value: " << *maxIt << endl;
 
     // Demonstrates sorting the array
@@ -49,7 +50,17 @@ int main() {
     for (auto n : numbers) {
         cout << n << " ";
     }
-    cout << endl;
+    cout << "\n";
+
+    // Demonstrates fill and swap
+    array<double, SIZE> backup{};
+    backup.fill(-1);       // fill backup array with -1
+    numbers.swap(backup);  // swap contents with original array
+
+    // Display first elements after swap
+    cout << "\nAfter swap:" << endl;
+    cout << "Numbers first element: " << numbers.front() << endl;
+    cout << "Backup first element: " << backup.front() << endl;
 
     return 0;
 }
